@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Mental Health Questionnaire</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename="question.css")
+    }}" />
+  </head>
+  <body>
+    <div class="app">
+      <h1>Mental Health Questionnaire Application</h1>
+      <div class="quiz">
+        <h2 id="question">
+          Click to start taking the questionnaire or view your statistics
+        </h2>
+        <div id="answer-buttons">
+          <button
+            class="btn"
+            onclick="start_questionnaire()"
+          >
+            Start Questionnaire
+          </button>
+          <button
+            class="btn"
+            onclick="view_statistics()"
+          >
+            View Statistics
+          </button>
+      </div>
+    </div>
+
+    <script>
+      function start_questionnaire() {
+        // Redirect to the start questionnaire page
+        window.location.href = "/question1"; // Adjust the URL as needed
+      }
+
+      function view_statistics() {
+        // Redirect to the view statistics page
+        window.location.href = "/statistics"; // Adjust the URL as needed
+      }
+    </script>
+  </body>
+</html>

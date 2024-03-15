@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Mental Health Questionnaire</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename="question.css")
+    }}" />
+  </head>
+  <body>
+    <div class="app">
+      <form action="{{ url_for('question4') }}" method="POST">
+        <h1>Mental Health Questionnaire</h1>
+        <div class="quiz">
+          <h2 id="question">
+            Do you find it difficult to concentrate or make decisions?
+          </h2>
+          <div id="answer-buttons">
+            <button
+              class="btn"
+              name="option"
+              value="Yes, frequently"
+              onclick="selectOption(this)"
+            >
+              Yes, frequently
+            </button>
+            <button
+              class="btn"
+              name="option"
+              value="Sometimes"
+              onclick="selectOption(this)"
+            >
+              Sometimes
+            </button>
+            <button
+              class="btn"
+              name="option"
+              value="Rarely"
+              onclick="selectOption(this)"
+            >
+              Rarely
+            </button>
+            <button
+              class="btn"
+              name="option"
+              value="Never"
+              onclick="selectOption(this)"
+            >
+              Never
+            </button>
+          </div>
+
+          <script>
+            function selectOption(btn) {
+              var buttons = document.querySelectorAll(".btn");
+              buttons.forEach(function (button) {
+                button.classList.remove("selected");
+              });
+              btn.classList.add("selected");
+            }
+          </script>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

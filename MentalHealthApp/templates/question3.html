@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Mental Health Questionnaire</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename="question.css")
+    }}" />
+  </head>
+  <body>
+    <div class="app">
+      <form action="{{ url_for('question3') }}" method="POST">
+        <h1>Mental Health Questionnaire</h1>
+        <div class="quiz">
+          <h2 id="question">
+            Have you experienced any changes in appetite or eating habits
+            lately?
+          </h2>
+          <div id="answer-buttons">
+            <button
+              class="btn"
+              name="option"
+              value="Yes, increased/decreased appetite"
+              onclick="selectOption(this)"
+            >
+              Yes, increased/decreased appetite
+            </button>
+            <button
+              class="btn"
+              name="option"
+              value="No changes"
+              onclick="selectOption(this)"
+            >
+              No changes
+            </button>
+          </div>
+
+          <script>
+            function selectOption(btn) {
+              var buttons = document.querySelectorAll(".btn");
+              buttons.forEach(function (button) {
+                button.classList.remove("selected");
+              });
+              btn.classList.add("selected");
+            }
+          </script>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
