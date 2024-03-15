@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, session, url_for, request
 import sqlite3
+import sys
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -13,6 +14,7 @@ questions_with_options = {
 }
 '''
 
+# These variables are used to insert to the database
 question1_ans = ""
 question2_ans = ""
 question3_ans = ""
@@ -127,6 +129,87 @@ def completion():
         return render_template("completion.html")
     else:
         return redirect(url_for("home"))
+
+@app.route("/statistics")
+def statistics():
+    # Connect to database and set cursor
+    conn = sqlite3.connect("database.db")
+    db_cursor = conn.cursor()
+
+    # Execute SQL queries to get the count of each item in each column
+    query1 = "SELECT question1, COUNT(*) FROM answers GROUP BY question1"
+    query2 = "SELECT question2, COUNT(*) FROM answers GROUP BY question2"
+    query3 = "SELECT question3, COUNT(*) FROM answers GROUP BY question3"
+    query4 = "SELECT question4, COUNT(*) FROM answers GROUP BY question4"
+
+    # Execute the query and fetch the results
+    db_cursor.execute(query1)
+    answers_count1 = db_cursor.fetchall()
+    db_cursor.execute(query2)
+    answers_count2 = db_cursor.fetchall()
+    db_cursor.execute(query3)
+    answers_count3 = db_cursor.fetchall()
+    db_cursor.execute(query4)
+    answers_count4 = db_cursor.fetchall()
+
+    # Close connection
+    conn.close()
+
+    # Variables for each answer dictionary
+    answers1_dict = {}
+    answers2_dict = {}
+    answers3_dict = {}
+    answers4_dict = {}
+
+    # Populate dictionary with they key(answer) and the value(count)
+    for row in answers_count1:
+        answers1_dict[row[0]] = row[1]
+
+    for row in answers_count2:
+        answers2_dict[row[0]] = row[1]
+
+    for row in answers_count3:
+        answers3_dict[row[0]] = row[1]
+
+    for row in answers_count4:
+        answers4_dict[row[0]] = row[1]
+
+    question1_labels = str(list(answers1_dict.keys()))
+    question1_labels = question1_labels[1:-1]
+    question1_labels = question1_labels.replace("'", "")
+    question1_counts = str(list(answers1_dict.values()))
+    question1_counts = question1_counts[1:-1]
+    question1_counts = question1_counts.replace("'", "")
+
+    question2_labels = str(list(answers2_dict.keys()))
+    question2_labels = question2_labels[1:-1]
+    question2_labels = question2_labels.replace("'", "")
+    question2_counts = str(list(answers2_dict.values()))
+    question2_counts = question2_counts[1:-1]
+    question2_counts = question2_counts.replace("'", "")
+
+    question3_labels = str(list(answers3_dict.keys()))
+    question3_labels = question3_labels[1:-1]
+    question3_labels = question3_labels.replace("'", "")
+    question3_counts = str(list(answers3_dict.values()))
+    question3_counts = question3_counts[1:-1]
+    question3_counts = question3_counts.replace("'", "")
+
+    question4_labels = str(list(answers4_dict.keys()))
+    question4_labels = question4_labels[1:-1]
+    question4_labels = question4_labels.replace("'", "")
+    question4_counts = str(list(answers4_dict.values()))
+    question4_counts = question4_counts[1:-1]
+    question4_counts = question4_counts.replace("'", "")
+   
+    return render_template("statistics.html", question1_labels=question1_labels, 
+                                                question1_counts=question1_counts,
+                                                question2_labels=question2_labels,
+                                                question2_counts=question2_counts,
+                                                question3_labels=question3_labels,
+                                                question3_counts=question3_counts,
+                                                question4_labels=question4_labels,
+                                                question4_counts=question4_counts)
 
 
 if __name__ == "__main__":

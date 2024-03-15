@@ -1,0 +1,136 @@
+<html>
+  <head>
+    <title>Mental Health Questionnaire</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename="chart.css") }}"
+    />
+  </head>
+  <body>
+    <div class="chart-container">
+      <div class="chart">
+        <canvas id="myChart1"></canvas>
+      </div>
+      <div class="chart">
+        <canvas id="myChart2"></canvas>
+      </div>
+      <div class="chart">
+        <canvas id="myChart3"></canvas>
+      </div>
+      <div class="chart">
+        <canvas id="myChart4"></canvas>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const ctx1 = document.getElementById("myChart1");
+      const ctx2 = document.getElementById("myChart2");
+      const ctx3 = document.getElementById("myChart3");
+      const ctx4 = document.getElementById("myChart4");
+
+      const question1_labels = "{{ question1_labels }}";
+      const question1_labels_array = question1_labels.split(", ");
+      const question1_counts = "{{ question1_counts }}";
+      const question1_counts_array = question1_counts.split(", ");
+
+      const question2_labels = "{{ question2_labels }}";
+      const question2_labels_array = question2_labels.split(", ");
+      const question2_counts = "{{ question2_counts }}";
+      const question2_counts_array = question2_counts.split(", ");
+
+      const question3_labels = "{{ question3_labels }}";
+      const question3_labels_array = question3_labels.split(", ");
+      const question3_counts = "{{ question3_counts }}";
+      const question3_counts_array = question3_counts.split(", ");
+
+      const question4_labels = "{{ question4_labels }}";
+      const question4_labels_array = question4_labels.split(", ");
+      const question4_counts = "{{ question4_counts }}";
+      const question4_counts_array = question4_counts.split(", ");
+
+      new Chart(ctx1, {
+        type: "bar",
+        data: {
+          labels: question1_labels_array,
+          datasets: [
+            {
+              label: "How are you feeling today?",
+              data: question1_counts_array,
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+
+      new Chart(ctx2, {
+        type: "bar",
+        data: {
+          labels: question2_labels_array,
+          datasets: [
+            {
+              label: "How would you describe your sleep quality recently?",
+              data: question2_counts_array,
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+
+      new Chart(ctx3, {
+        type: "bar",
+        data: {
+          labels: question3_labels_array,
+          datasets: [
+            {
+              label: "Have you experienced any changes in appetite or eating habits lately?",
+              data: question3_counts_array,
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+
+      new Chart(ctx4, {
+        type: "bar",
+        data: {
+          labels: question4_labels_array,
+          datasets: [
+            {
+              label: "Do you find it difficult to concentrate or make decisions?",
+              data: question4_counts_array,
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
