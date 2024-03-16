@@ -7,6 +7,16 @@
   <body>
     <div class="app">
       <h1>Thank you for answering the questionnaire</h1>
+      {% if help == "Yes" %}
+      <div>
+        <h2>We think you need some assistance, please do not be afraid to reach out for help</h2>
+        <a href="https://www.imh.com.sg/CHAT/Get-Help/Pages/Other-Mental-Health-Resources.aspx">Reach out for help here.</a>
+      </div>
+      {% else %}
+      <div>
+        <h2>You're healthy, no need to worry!</h2>
+      </div>
+      {% endif %}
       <div class="quiz">
         <h2 id="question">
           Do you want to return to home or view your statistics

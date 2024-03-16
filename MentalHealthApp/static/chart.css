@@ -11,3 +11,11 @@
     box-sizing: border-box;
     margin: 5px;
 }
+
+.column {
+    min-height: 100vh;
+}
+
+.home {
+    font-weight: 600;
+}
