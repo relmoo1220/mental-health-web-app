@@ -66,10 +66,10 @@ Welcome bla bla
 
 ### Built With
 
-* [![Docker][docker.io]][docker-url]
-* [![Docker][flask.io]][flask-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* [![Docker][docker.io]][docker-url] [![Flask][flask.io]][flask-url]
+* [![Pandas][pandas.io]][pandas-url] [![sklearn][sklearn.io]][sklearn-url]
+* [![Javascript][javascript.com]][javascript-url] [![JQuery][JQuery.com]][JQuery-url]
+* [![sqlite][sqlite.io]][sqlite-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -95,13 +95,9 @@ Welcome bla bla
   ```
 
 ### Docker
-3. Build docker image in backend PATH
+3. Build and run docker image
   ```bash
-  docker build -t mental .
-  ```
-4. Run docker image **IN EC2** (development)
-  ```bash
-  docker run mental:latest
+  docker compose up
   ```
 
 <!-- USAGE EXAMPLES -->
@@ -121,12 +117,11 @@ Project Link: [https://github.com/relmoo1220/psd2](https://github.com/relmoo1220
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-* [License](https://choosealicense.com/)
-* [Image Shields](https://shields.io)
-* [Flask](https://flask.palletsprojects.com/en/3.0.x/)
-* [Docker](https://www.docker.com/)
-* [Bootstrap][Bootstrap-url]
-* [JQuery][JQuery-url]
+* [License][license-url]| [Image Shields](https://shields.io)
+* [Docker][docker-url] | [Flask][flask-url]
+* [Pandas][pandas-url] | [SciKit-Learn][sklearn-url]
+* [Javascript][javascript-url] | [JQuery][JQuery-url]
+* [sqlite][sqlite-url]
 
 
 <!-- TROUBLESHOOTING -->
@@ -143,9 +138,15 @@ Project Link: [https://github.com/relmoo1220/psd2](https://github.com/relmoo1220
 [product-screenshot]: images/screenshot.png
 [docker.io]: https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white
 [docker-url]: https://www.docker.com/
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
+[javascript.com]: https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
+[javascript-url]: https://www.javascript.com/
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
 [flask.io]: https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white
 [flask-url]: https://flask.palletsprojects.com/en/3.0.x/
+[pandas.io]: https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white
+[pandas-url]: https://pandas.pydata.org/
+[sklearn.io]: https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white
+[sklearn-url]: https://scikit-learn.org/stable/
+[sqlite.io]: https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white
+[sqlite-url]: https://www.sqlite.org/
