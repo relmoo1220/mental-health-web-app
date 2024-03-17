@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flask-1
+  template:
+    metadata:
+      labels:
+        app: flask-1
+    spec:
+      containers:
+      - name: flask-1
+        image: nkjcolin/mental:latest
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask
+spec:
+  selector:
+    app: flask
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: LoadBalancer
