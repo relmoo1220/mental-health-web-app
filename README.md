@@ -42,7 +42,6 @@
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
-    <li><a href="#troubleshooting">Troubleshooting</a></li>
   </ol>
 </details>
 
@@ -53,15 +52,14 @@
 
 [![Mental App Homepage][product-screenshot]]()
 
-Welcome bla bla
+<div align="center">
+Welcome to MH APP
+</div>
 
 ### Key Features:
-
-- **BOLD BLA BLA** bla bla
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
+* **Logistic Regression with the data stored**
+* **Highly scalable with docker and Kubernetes**
+* **All information stored are anonymous**
 
 
 ### Built With
@@ -70,9 +68,6 @@ Welcome bla bla
 * [![Pandas][pandas.io]][pandas-url] [![sklearn][sklearn.io]][sklearn-url]
 * [![Javascript][javascript.com]][javascript-url] [![JQuery][JQuery.com]][JQuery-url]
 * [![sqlite][sqlite.io]][sqlite-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -102,8 +97,7 @@ Welcome bla bla
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-* bla bla
-
+* This app can help to assist people who are unsure if they require help.
 
 <!-- LICENSE -->
 ## License
@@ -122,11 +116,6 @@ Project Link: [https://github.com/relmoo1220/psd2](https://github.com/relmoo1220
 * [Pandas][pandas-url] | [SciKit-Learn][sklearn-url]
 * [Javascript][javascript-url] | [JQuery][JQuery-url]
 * [sqlite][sqlite-url]
-
-
-<!-- TROUBLESHOOTING -->
-## Troubleshooting
-* bla bla
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
