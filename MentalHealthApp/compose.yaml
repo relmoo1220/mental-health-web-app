@@ -3,7 +3,7 @@ services:
   flask:
     build:
       context: ./
-    image: flask/python-flask:latest  # Set the image name
+    image: mental:latest  # Set the image name
     ports:
       - "5000:5000"
     volumes:
