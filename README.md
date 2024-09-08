@@ -7,7 +7,7 @@
 <br />
 <div align="center">
 
-  <h3 align="center">MH APP</h3>
+  <h3 align="center">Mental Health Web Application</h3>
 
   <p align="center">
     <a><strong>Flask | Docker </strong></a>
@@ -53,20 +53,22 @@
 [![Mental App Homepage][product-screenshot]]()
 
 <div align="center">
-Welcome to MH APP
+Welcome to Mental Health Web Application
 </div>
 
 ### Key Features:
-* **Logistic Regression with the data stored**
-* **Highly scalable with docker and Kubernetes**
-* **All information stored are anonymous**
+* **Provide the user with a set of questions to do a preliminary assessment of their mental health**
+* **After the user answers the questionnaire, logistic regression would be used to classify whether the user requires help**
+* **Data collection is done everytime a user answers the questionnaire, this helps to grow our dataset and provide more accurate diagnosis in the future**
+* **Usage of Chart.js to show statistics of each question**
+* **Highly scalable with Docker and Kubernetes**
 
 
 ### Built With
 
 * [![Docker][docker.io]][docker-url] [![Flask][flask.io]][flask-url]
 * [![Pandas][pandas.io]][pandas-url] [![sklearn][sklearn.io]][sklearn-url]
-* [![Javascript][javascript.com]][javascript-url] [![JQuery][JQuery.com]][JQuery-url]
+* [![Javascript][javascript.com]][javascript-url]
 * [![sqlite][sqlite.io]][sqlite-url]
 
 <!-- GETTING STARTED -->
@@ -80,7 +82,7 @@ Welcome to MH APP
 
 1. Clone the repo
   ```sh
-  git clone https://github.com/relmoo1220/psd2.git
+  git clone https://github.com/relmoo1220/mental-health-web-app.git
   ```
 
 ### Flask
@@ -92,7 +94,8 @@ Welcome to MH APP
 ### Docker
 3. Build and run docker image
   ```bash
-  docker compose up
+  docker-compose build
+  docker-compose up
   ```
 
 <!-- USAGE EXAMPLES -->
@@ -106,7 +109,7 @@ Distributed under the MIT License. See `LICENSE` for more information
 
 <!-- CONTACT -->
 ## Contact
-Project Link: [https://github.com/relmoo1220/psd2](https://github.com/relmoo1220/psd2)
+Project Link: [https://github.com/relmoo1220/mental-health-web-app](https://github.com/relmoo1220/mental-health-web-app)
 
 
 <!-- ACKNOWLEDGMENTS -->
@@ -114,7 +117,7 @@ Project Link: [https://github.com/relmoo1220/psd2](https://github.com/relmoo1220
 * [License][license-url]| [Image Shields](https://shields.io)
 * [Docker][docker-url] | [Flask][flask-url]
 * [Pandas][pandas-url] | [SciKit-Learn][sklearn-url]
-* [Javascript][javascript-url] | [JQuery][JQuery-url]
+* [Javascript][javascript-url]
 * [sqlite][sqlite-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
